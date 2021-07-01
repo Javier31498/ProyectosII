@@ -18,7 +18,7 @@ class PreguntasmController extends Controller
      */
     public function index()
     {
-        $preguntasms = Preguntasm::paginate();
+        $preguntasms = preguntasm::paginate();
 
         return view('preguntasm.index', compact('preguntasms'))
             ->with('i', (request()->input('page', 1) - 1) * $preguntasms->perPage());
